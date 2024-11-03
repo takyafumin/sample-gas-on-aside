@@ -19,6 +19,33 @@ asideを使ってローカルでGASを開発してみる
 
 ## セットアップ手順
 
+### 1. 必要なパッケージをインストールする
+
+次に、必要なパッケージをインストールします。
+
+```bash
+npm install
+```
+
+### 2. .clasp-dev.json の設定
+
+開発環境用の `.clasp-dev.json` ファイルを作成し、必要な情報を記入します。
+
+1. `.clasp.json.template` をコピーして `.clasp-dev.json` を作成します。
+    ```bash
+    cp .clasp.json.template .clasp-dev.json
+    ```
+2. `.clasp-dev.json` を編集し、必要な情報を記入します。
+    ```bash
+    {
+      "scriptId": "YOUR_SCRIPT_ID",
+      "rootDir": "./dist",
+      "parentId": ["YOUR_PARENT_ID"]
+    }
+    ```
+
+## TIPS
+
 ### TypeScriptとESLintのバージョン互換性問題の解決
 
 プロジェクトで使用しているTypeScriptのバージョンが`@typescript-eslint`と互換性がない場合、以下の手順で解決できます。
@@ -37,3 +64,4 @@ asideを使ってローカルでGASを開発してみる
     ```bash
     npm install typescript@5.1.6
     ```
+
