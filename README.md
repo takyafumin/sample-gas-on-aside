@@ -14,4 +14,26 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 # sample-gas-on-aside
+
 asideを使ってローカルでGASを開発してみる
+
+## セットアップ手順
+
+### TypeScriptとESLintのバージョン互換性問題の解決
+
+プロジェクトで使用しているTypeScriptのバージョンが`@typescript-eslint`と互換性がない場合、以下の手順で解決できます。
+
+1. 現在の`@typescript-eslint`パッケージをアンインストールします。
+    ```bash
+    npm uninstall @typescript-eslint/eslint-plugin @typescript-eslint/parser
+    ```
+
+2. サポートされているバージョンの`@typescript-eslint`パッケージをインストールします。
+    ```bash
+    npm install @typescript-eslint/eslint-plugin@5.59.0 @typescript-eslint/parser@5.59.0
+    ```
+
+3. サポートされているバージョンのTypeScriptをインストールします。
+    ```bash
+    npm install typescript@5.1.6
+    ```
