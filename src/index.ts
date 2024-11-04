@@ -14,6 +14,20 @@
  * limitations under the License.
  */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { hello } from './example-module';
 
-console.log(hello());
+/**
+ * GETリクエストを処理する関数
+ */
+function doGet(e: GoogleAppsScript.Events.DoGet) {
+  return ContentService.createTextOutput('Hello, world!');
+}
+
+/**
+ * POSTリクエストを処理する関数
+ */
+function doPost(e: GoogleAppsScript.Events.DoPost) {
+  const data = JSON.parse(e.postData.contents);
+  return ContentService.createTextOutput(
+    'Received data: ' + JSON.stringify(data)
+  );
+}
